@@ -68,10 +68,13 @@ if (!process.env.STRIPE_KEY) {
 const app = express();
 
 // CORS configuration for production
-app.use(cors({
-  origin: "https://your-netlify-site.netlify.app", // Replace with your Netlify domain
-  methods: ["GET", "POST"],
-}));
+app.use(
+  cors({
+    origin: "https://amazon-fullstack-bonright.netlify.app", // Replace with your deployed frontend domain
+    methods: ["GET", "POST"], // Limit to the methods your API uses
+  })
+);
+
 
 app.use(express.json());
 
